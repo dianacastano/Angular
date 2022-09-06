@@ -1,14 +1,12 @@
 const { Router } = require('express');
 const router = Router();
+const librosCTRL = require('../controllers/libros')
 
-// Importar controladores
-const { getLibro, postLibro, putLibro, deleteLibro } = require('../controllers/libros')
-
-// Crear los endpoints para la ruta /profesores y atenderlos mediante sus controladores
-router.get('/', getLibro);
-router.post('/', postLibro);
-router.put('/', putLibro);
-router.delete('/', deleteLibro);
+// Crear los endpoints para la ruta /libros
+router.get("/libros", librosCTRL.getLibro );
+router.post("/libros", librosCTRL.postLibro);
+router.put("/libros", librosCTRL.putLibro);
+router.delete("/libros", librosCTRL.deleteLibro);
 
 // Exportar router
 module.exports = router;

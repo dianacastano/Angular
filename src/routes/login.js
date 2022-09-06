@@ -1,11 +1,9 @@
 const { Router } = require('express');
 const router = Router();
+const loginCtrl = require('../controllers/login')
 
-// Importar controladores
-const { appLogin } = require('../controllers/login')
-
-// Crear los endpoints para la ruta /profesores y atenderlos mediante sus controladores
-router.post('/', appLogin);
+// Crear los endpoints para la ruta login
+router.post("/login", loginCtrl.appLogin);
 
 // Exportar router
 module.exports = router;

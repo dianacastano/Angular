@@ -23,4 +23,4 @@ const appLogin = (req, res) => {
 };
 
 // Exportar controladores
-module.exports = {appLogin}
+module.exports = { appLogin }

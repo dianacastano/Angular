@@ -51,8 +51,8 @@ const putLibro = (req, res) => {
     const { titulo, tipo, autor, precio, foto, id_libro } = req.body;
     let params = [titulo, tipo, autor, precio, foto, id_libro];
     let sql = "UPDATE libro SET titulo = COALESCE(?, titulo)," +
-                "tipo = COALESCE(?, tipo), autor = COALESCE(?, autor)," +
-                "precio = COALESCE(?, precio), foto = COALESCE(?, foto) WHERE id_libro = ?";
+            "tipo = COALESCE(?, tipo), autor = COALESCE(?, autor)," +
+            "precio = COALESCE(?, precio), foto = COALESCE(?, foto) WHERE id_libro = ?";
     appbooksBBDD.query(sql, params, (error, result) => {
         if (!error) {
             let respuesta;
@@ -90,4 +90,4 @@ const deleteLibro = (req, res) => {
 };
 
 // Exportar controladores
-module.exports = {getLibro, postLibro, putLibro, deleteLibro}
+module.exports = { getLibro, postLibro, putLibro, deleteLibro}

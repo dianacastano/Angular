@@ -22,8 +22,8 @@ const putUsuario = (req, res) => {
     const { nombre, apellidos, correo, url, password, id_usuario } = req.body;
     let params = [nombre, apellidos, correo, url, password, id_usuario];
     let sql = "UPDATE usuario SET nombre = COALESCE(?, nombre), apellidos = COALESCE(?, apellidos)," +
-                "correo = COALESCE(?, correo), url = COALESCE(?, url)," +
-                "password = COALESCE(?, password) WHERE id_usuario = ?";
+              "correo = COALESCE(?, correo), url = COALESCE(?, url)," +
+              "password = COALESCE(?, password) WHERE id_usuario = ?";
     appbooksBBDD.query(sql, params, (error, result) => {
         if (!error) {
             let respuesta;
@@ -41,4 +41,4 @@ const putUsuario = (req, res) => {
 };
 
 // Exportar controladores
-module.exports = {postUsuario,putUsuario}
+module.exports = { postUsuario, putUsuario}
