@@ -5,7 +5,7 @@ const { appbooksBBDD } = require('../bbdd');
 const postUsuario = (req, res) => {
     const { nombre, apellidos, correo, url, password } = req.body;
     let params = [nombre, apellidos, correo, url, password];
-    let sql = 'INSERT INTO usuario (nombre, apellidos, correo, url, password) VALUES (?, ?, ?, ?, ?)';
+    let sql = 'INSERT INTO usuario (nombre, apellidos, correo, foto, password) VALUES (?, ?, ?, ?, ?)';
     appbooksBBDD.query(sql, params, (error, result) => {
         if (!error) {
             let respuesta = { ok: true, message: `Registrado usuario con id ${result.insertId}`, resultado: result.insertId };
